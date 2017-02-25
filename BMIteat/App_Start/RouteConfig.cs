@@ -13,10 +13,12 @@ namespace BMIteat
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            //Change Default route to our BMI APP and index page
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "BMI", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BMIteat.Models.UserBMI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<h4>@ViewBag.totals</h4>*@
+
+<table class="table">
+    <tr>
+        <th><h4>Underweight</h4></th>
+        <th><h4>Normal Weight</h4></th>
+        <th><h4>Pre Obesity</h4></th>
+        <th><h4>Obesity Class 1</h4></th>
+        <th><h4>Obessity Higher</h4></th>
+    </tr>
+    <tr>
+        <td><h4>@ViewBag.under</h4></td>
+        <td><h4>@ViewBag.normal</h4></td>
+        <td><h4>@ViewBag.pre</h4></td>
+        <td><h4>@ViewBag.obe1</h4></td>
+        <td><h4>@ViewBag.obeh</h4></td>
+    </tr>
+
+</table>
+
+<br />
+<p>
+    @Html.ActionLink("Register New BMI Details", "Register")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BMItype)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BMItype)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BMIID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BMIID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BMIID })
+        </td>*@
+    </tr>
+}
+
+</table>
